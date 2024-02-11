@@ -8,20 +8,20 @@ namespace xadrez_console.Board
 {
     internal class Position
     {
-        public int Linha {  get; set; }
-        public int Coluna { get; set; }
+        public int Lines {  get; set; }
+        public int  Columns { get; set; }
 
         public Position() { }
 
-        public Position(int linha, int coluna)
+        public Position(int lines, int columns)
         {
-            Linha = linha;
-            Coluna = coluna;
+            Lines = lines;
+            Columns = columns;
         }
 
         public override string ToString()
         {
-            return Linha + ", " + Coluna;
+            return Lines + ", " + Columns;
         }
     }
 }
