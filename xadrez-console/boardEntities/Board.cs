@@ -23,5 +23,11 @@ namespace xadrez_console.boardEntities
         {
             return Pieces[line, column];
         }
+
+        public void PlacePiece(Piece piece, Position position)
+        {
+            Pieces[position.Line, position.Column] = piece;
+            piece.Position = position;
+        }
     }
 }
