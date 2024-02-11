@@ -9,8 +9,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Entities\" />
-    <Folder Include="Exceptions\" />
+    <Compile Remove="Entities\**" />
+    <Compile Remove="Exceptions\**" />
+    <EmbeddedResource Remove="Entities\**" />
+    <EmbeddedResource Remove="Exceptions\**" />
+    <None Remove="Entities\**" />
+    <None Remove="Exceptions\**" />
   </ItemGroup>
 
 </Project>

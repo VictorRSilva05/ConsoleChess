@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace xadrez_console.Board
+namespace xadrez_console.boardEntities
 {
     internal enum Color : byte
     {

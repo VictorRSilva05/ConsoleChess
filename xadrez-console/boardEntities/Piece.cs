@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace xadrez_console.Board
+namespace xadrez_console.boardEntities
 {
     internal class Piece
     {
@@ -13,19 +14,13 @@ namespace xadrez_console.Board
         public int QtMovements { get; protected set; }
         public Board Board { get; protected set; }
 
-        public Piece()
-        {
-
-        }
-
-        public Piece(Position position, Color color, int qtMovements, Board board)
+        public Piece(Position position, Board board, Color color)
         {
             Position = position;
-            Color = color;
-            QtMovements = qtMovements;
             Board = board;
+            Color = color;
+            QtMovements = 0;
         }
-
 
     }
 }
