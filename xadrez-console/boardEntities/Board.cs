@@ -24,10 +24,42 @@ namespace xadrez_console.boardEntities
             return Pieces[line, column];
         }
 
+        public Piece Piece(Position position) {
+            return Pieces[position.Line,position.Column];
+        }
+
+        public bool PieceExists(Position position)
+        {
+            ValidatePosition(position);
+            return Piece(position) != null;
+        }
+
         public void PlacePiece(Piece piece, Position position)
         {
+            if(PieceExists(position))
+            {
+                throw new BoardException("There's already a piece in this position");
+            }
             Pieces[position.Line, position.Column] = piece;
             piece.Position = position;
+        }
+
+
+        public bool ValidPosition(Position position)
+        {
+            if(position.Line<0 || position.Line>=Line || position.Column<0 || position.Column >= Column)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public void ValidatePosition(Position position)
+        {
+            if(!ValidPosition(position))
+            {
+                throw new BoardException("Invalid position");
+            }
         }
     }
 }
