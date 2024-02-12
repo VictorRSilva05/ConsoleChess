@@ -6,22 +6,11 @@ namespace xadrez_console
     {
         static void Main(string[] args)
         {
-            try
-            {
-                Board board = new Board(8, 8);
+            ChessPosition chessPosition = new ChessPosition('c', 7);
 
-                board.PlacePiece(new Tower(board, Color.Black), new Position(0, 0));
-                board.PlacePiece(new Tower(board, Color.White), new Position(0, 9));
+            Console.WriteLine(chessPosition);
 
-                Screen.PrintBoard(board);
-
-                Console.ReadLine();
-            }
-
-            catch (BoardException ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
+            Console.WriteLine(chessPosition.ToPosition());
         }
     }
 }
