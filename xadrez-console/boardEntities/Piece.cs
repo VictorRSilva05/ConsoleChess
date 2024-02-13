@@ -22,5 +22,9 @@ namespace xadrez_console.boardEntities
             QtMovements = 0;
         }
 
+        public void IncrementQtMovements()
+        {
+            QtMovements++;
+        }
     }
 }
